@@ -1,25 +1,14 @@
-import { Component } from '@angular/core';
-import { Customer, Address } from './model';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   moduleId: module.id,
   selector: 'my-app',
-  templateUrl: 'app.component.html',
-  styleUrls: ['app.component.css']
+  template: `
+    <h1>{{title}}</h1>
+    <customer-list></customer-list>
+  `
 })
+
 export class AppComponent {
-  
-
-  customer: Customer = { 
-    id: 1,
-    name: '',
-    address: {
-      city: 'Anytown',
-      region: 'east',
-      street:'123 main street',
-      state: 'California'
-    }
-  };
-  hideAddress: boolean = false;
-
+  title = 'Customer Manager';
 }
