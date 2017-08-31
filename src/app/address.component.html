@@ -10,3 +10,13 @@
     <label>city:</label>
     <input [(ngModel)]="address.state">
 </fieldset>
+<select [(ngModel)]="address.state">
+    <option *ngFor="let state of states">
+          {{state}}
+    </option>
+  </select>
+  <select [(ngModel)]="address.region">
+    <option *ngFor="let region of regions">
+        {{region}}
+    </option>
+  </select>

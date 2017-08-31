@@ -8,7 +8,7 @@ import { Customer, Address } from './model';
   styleUrls: ['customer-list.component.css']
 })
 export class CustomerListComponent {
-  
+
   customers: Customer[] = [
     {
       id: 1,
@@ -53,5 +53,13 @@ export class CustomerListComponent {
   ];
 
   customer: Customer;
+
+  shift(increment: number) {
+    let ix = this.customers
+      .findIndex(c => c === this.customer) + increment;
+    ix = Math.min(this.customers.length -1, Math.max(0, ix));
+
+    this.customer = this.customers[ix];
+  }
 
 }

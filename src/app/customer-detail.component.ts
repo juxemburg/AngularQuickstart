@@ -1,5 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Customer, Address } from './model';
+
+
 
 @Component({
   moduleId: module.id,
@@ -8,12 +10,20 @@ import { Customer, Address } from './model';
   styleUrls: ['customer-detail.component.css']
 })
 export class CustomerDetailComponent {
-  
-  regions = ['East', 'West', 'North', 'South', 'Midwest'];
-  states = ['California', 'Jalisco', 'Quebec', 'Illinois'];
-  
-
   @Input() customer: Customer;
+  @Output() shift: EventEmitter<number> = new EventEmitter();
+
+
+
   showAddress: boolean = false;
+
+  left() {
+    this.shift.emit(-1);
+
+  }
+
+  right() {
+    this.shift.emit(1);
+  }
 
 }

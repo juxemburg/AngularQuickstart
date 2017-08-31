@@ -1,4 +1,11 @@
-<h1>Hello {{customer.name}}</h1>
+<h1>
+  <button (click)="left()"><</button>
+  Hello {{customer.name}}
+  <button (click)="right()">></button>
+</h1>
+
+
+
 <p><i>{{customer.name}} is at {{customer.address.street}}
 in the {{customer.address.state}}
 which is from {{customer.address.region}}
@@ -10,13 +17,3 @@ which is from {{customer.address.region}}
 <div *ngIf="showAddress">
     <address-comp [address]="customer.address"></address-comp>
 </div>
-<select [(ngModel)]="customer.address.state">
-  <option *ngFor="let state of states">
-        {{state}}
-  </option>
-</select>
-<select [(ngModel)]="customer.address.region">
-  <option *ngFor="let region of regions">
-      {{region}}
-  </option>
-</select>

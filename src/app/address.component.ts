@@ -11,4 +11,6 @@ export class AddressComponent {
     
     @Input() address: Address;
 
+    regions = ['East', 'West', 'North', 'South', 'Midwest'];
+    states = ['California', 'Jalisco', 'Quebec', 'Illinois'];
 }
